@@ -95,9 +95,11 @@ jobs:
     - name: Compress with PowerShell
       shell: pwsh
       run: |
+        echo "Mkdir output"
         mkdir output
-        cp -r $env:Solution_Name/bin/Release output/
-        ls output
+        echo "Copy release to output"
+        cp -r $env:Solution_Name/bin/Release/* output/
+        ls
         $source = output
         $destination = "release.zip"
         Compress-Archive -Path $source\* -DestinationPath $destination
