@@ -101,7 +101,7 @@ jobs:
         cp -r $env:Solution_Name/bin/Release/* output/
         ls
         $destination = "release.zip"
-        Compress-Archive -Path $env:Solution_Name\output\* -DestinationPath $destination
+        Compress-Archive -Path .\output\* -DestinationPath $destination
                 
     - name: Upload to GitHub Release
       uses: softprops/action-gh-release@v1
