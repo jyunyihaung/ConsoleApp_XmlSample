@@ -100,9 +100,8 @@ jobs:
         echo "Copy release to output"
         cp -r $env:Solution_Name/bin/Release/* output/
         ls
-        $source = $env:Solution_Name/output/
         $destination = "release.zip"
-        Compress-Archive -Path $source\* -DestinationPath $destination
+        Compress-Archive -Path $env:Solution_Name\output\* -DestinationPath $destination
                 
     - name: Upload to GitHub Release
       uses: softprops/action-gh-release@v1
