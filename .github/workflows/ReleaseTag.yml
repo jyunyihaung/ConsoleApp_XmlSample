@@ -100,7 +100,7 @@ jobs:
         echo "Copy release to output"
         cp -r $env:Solution_Name/bin/Release/* output/
         ls
-        $source = output
+        $source = $env:Solution_Name/output/
         $destination = "release.zip"
         Compress-Archive -Path $source\* -DestinationPath $destination
                 
