@@ -95,7 +95,7 @@ jobs:
     - name: Set up zip file
       run: |
         mkdir output
-        cp -r $env:Solution_Name/$env:Solution_Name/$env:Solution_Name/bin/Release output/
+        cp -r $env:Solution_Name/bin/Release output/
         cd output
         zip -r ../release.zip .
         
